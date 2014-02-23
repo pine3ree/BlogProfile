@@ -38,7 +38,7 @@ $authorLinks = array();
 foreach($authors as $a) {
 	// we set a separate URL (url2) to reflect the public url of the author, since
 	// the author's $author->url is actually a page in the admin
-	$a->url2 = $page->url . $a->name . '/';
+	$a->url2 = rtrim($page->url, '/') . '/' . $a->name . '/';
 	$authorLinks[$a->url2] = $a->get('title|name');
 }
 
